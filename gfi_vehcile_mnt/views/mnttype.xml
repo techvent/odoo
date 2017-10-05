@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="gfi_mntvendo_form_view">
+            <field name="name">gfi.mnttype.form</field>
+            <field name="model">gfi.mnttype</field>
+            <field name="arch" type="xml">
+			<form string="Vendor">
+                    <sheet>
+                    
+	                    <group colspan="4" col="4">
+				                    <field name="name" />
+				                    <field name="remarks" />
+						</group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+<!-- Tree View -->							
+		<record id="city_tree_view" model="ir.ui.view">
+			<field name="name">Tree View</field>
+			<field name="model">gfi.mnttype</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+<!-- Actions -->
+    <record model='ir.actions.act_window' id='gfi_mnttype_action'>
+        <field name='name'>Maintenance Type</field>
+        <field name='res_model'>gfi.mnttype</field>
+        <field name='view_type'>form</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+    			
+<!-- Add menu entry -->
+
+        <menuitem name="Maintenace Types" id="mnttype_menu" parent="vehiclemnt_config" action="gfi_mnttype_action" sequence="3"/>
+        	
+    </data>
+</openerp>

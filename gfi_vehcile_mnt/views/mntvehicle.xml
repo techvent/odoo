@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="zone_form_view">
+            <field name="name">gfi.mntvehicle.form</field>
+            <field name="model">gfi.mntvehicle</field>
+            <field name="arch" type="xml">
+				<form string="Zone">
+	                <sheet>
+	                    <h1>Vehicle</h1>
+	                    <br />
+	                    
+	                    <h2>Vehicle Information</h2>
+	                    <group colspan="4" col="4">
+	                    			<field name="name"/>
+	                    			<field name="model"/>
+	                    			<field name="model_year"/>
+	                    			<field name="engine"/>
+	                    			<field name="chassis"/>
+	                    			<field name="horsepower"/>
+	                    			<field name="color"/>
+						</group>
+								
+						<br />
+						<h2>Driver's Information</h2>										
+	                    <group colspan="4" col="4">
+	                    			<field name="belong_to"/>
+	                    			<field name="driver_cnic"/>
+	                    			<field name="driver_license"/>
+	                    			<field name="driver_license_exp"/>                			
+						</group>						
+																				
+	                </sheet>
+	                
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>	   
+						                
+	            </form>
+            </field>
+        </record>
+
+<!-- Tree View 	--> 				
+		<record id="zone_tree_view" model="ir.ui.view">
+			<field name="name">Tree View</field>
+			<field name="model">gfi.mntvehicle</field>
+			<field name="arch" type="xml">
+				<tree>
+				   <field name="name"/>
+	               <field name="belong_to"/>
+	               <field name="model"/>
+	               <field name="model_year"/>					
+				</tree>
+			</field>
+		</record>		
+		
+<!-- Actions -->
+ 
+    <record model='ir.actions.act_window' id='gfizone_action'>
+        <field name='name'>Vehicle Registration</field>
+        <field name='res_model'>gfi.mntvehicle</field>
+        <field name='view_type'>form</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+<!-- Add menu entry -->
+        <menuitem name="Vehicle" id="mntvehicle_menu" parent="vehiclemnt_reg" 
+        	action="gfizone_action" sequence="5" />		
+        
+    </data>
+</openerp>

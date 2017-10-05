@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- $Revision: 58 $: -->
+<openerp>
+	<data>
+	
+		<!-- Menus -->
+		<menuitem name="Vehicle Maintenance" id="vehiclemnt_main" sequence="450"/>
+		
+		<menuitem name="Activity" id="vehiclemnt_activity" parent="vehiclemnt_main" sequence="1"/>
+		<menuitem name="Vechile Registration" id="vehiclemnt_reg" parent="vehiclemnt_main" sequence="1"/>
+        <menuitem name="Configuration" id="vehiclemnt_config" parent="vehiclemnt_main" sequence="2"/>
+        
+
+	</data>
+</openerp>

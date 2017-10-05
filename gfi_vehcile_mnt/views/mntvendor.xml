@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="gfi_mntvendo_form_view">
+            <field name="name">gfi.mntvendor.form</field>
+            <field name="model">gfi.mntvendor</field>
+            <field name="arch" type="xml">
+			<form string="Vendor">
+                    <sheet>
+                    
+                    <h1><field name="name" label="City Name"/></h1>
+                    <group colspan="4" col="4">
+			                    <field name="name" />
+			                    <field name="address" />
+			                    <field name="phone" />
+			                    <field name="remarks" />			                    			                    			                    			                    
+                                <!-- <field name="active" widget="radio"/> -->							
+					</group>
+						
+                    </sheet>
+                    
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>
+					                    
+                </form>                
+            </field>
+        </record>
+
+<!-- Tree View -->							
+		<record id="city_tree_view" model="ir.ui.view">
+			<field name="name">Tree View</field>
+			<field name="model">gfi.mntvendor</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+<!-- Actions -->
+    <record model='ir.actions.act_window' id='gfi_mntvendor_action'>
+        <field name='name'>Vendor</field>
+        <field name='res_model'>gfi.mntvendor</field>
+        <field name='view_type'>form</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+    			
+<!-- Add menu entry -->
+
+        <menuitem name="Vendor" id="mntvendor_menu" parent="vehiclemnt_config" action="gfi_mntvendor_action" sequence="4"/>
+        	
+    </data>
+</openerp>

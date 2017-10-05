@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="mnt_activity_form_view">
+            <field name="name">gfi.mntactivity.form</field>
+            <field name="model">gfi.mntactivity</field>
+            <field name="arch" type="xml">
+				<form string="Maintenance Activity">
+	                <sheet>
+	                    <h1>Maintenance Activity</h1>
+	                    <group colspan="4" col="4">
+	                    			<field name="datetime"/>
+	                                <field name="vehicle"/>		
+	                                <field name="type"/>
+	                                <field name="vendor"/>
+	                                <field name="remarks" />
+						</group>
+						<span>Expense<br /></span>
+						<h1><field name="expense"/></h1>
+						
+																
+						<notebook>
+							<page string="Description">
+								<field name="desc" />	
+<!-- 								<field name="mntactivity_line_ids" nolabel="1">
+									<tree string="Voucher Lines" editable="top">
+										<field name="type" />															
+										<field name="particulars" />
+										<field name="remarks" />
+										<field name="expense" />
+									</tree>
+								</field> -->
+							</page>
+						</notebook>													
+	                </sheet>
+	                
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>	   
+					             
+	            </form>
+            </field>
+        </record>
+
+<!-- Tree View -->					
+		<record id="activity_tree_view" model="ir.ui.view">
+			<field name="name">Tree View</field>
+			<field name="model">gfi.mntactivity</field>
+			<field name="arch" type="xml">
+				<tree>	
+									<field name="datetime"/>
+	                                <field name="vehicle"/>		
+	                                <field name="type"/>
+	                                <field name="vendor"/>
+	                                <field name="remarks" />
+	                                <field name="expense" />						
+				</tree>
+			</field>
+		</record>
+
+<!-- Search View -->
+		<record id="gate_pass_search_view" model="ir.ui.view">
+	            <field name="name">gfi.mntactivity.search</field>
+	            <field name="model">gfi.mntactivity</field>
+	            <field name="arch" type="xml">
+	                <search string="Search">
+		                <group expand="0" string="Group By..." colspan="12" col="10">
+		                	<filter string="Vehicle" icon="terp-go-today" domain="[]" context="{'group_by':'vehicle'}"/>
+		              		<filter string="Date" icon="terp-go-today" domain="[]" context="{'group_by':'datetime'}"/>
+		              		<filter string="Maintenace Types" domain="[]" context="{'group_by':'type'}" />
+                            <filter string="Vendor" domain="[]" context="{'group_by':'vendor'}" />
+		                </group>
+	  				 </search>
+	            </field>
+	        </record>
+	        
+	        		
+<!-- Actions -->
+ 
+    <record model='ir.actions.act_window' id='vehiclemnt_activity_action'>
+        <field name='name'>Activity</field>
+        <field name='res_model'>gfi.mntactivity</field>
+        <field name='view_type'>form</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+
+<!-- Add menu entry -->
+        <menuitem name="Activity" id="vehiclemnt_activity_menu" parent="vehiclemnt_activity" 
+        	action="vehiclemnt_activity_action" sequence="5" />		
+        
+    </data>
+</openerp>

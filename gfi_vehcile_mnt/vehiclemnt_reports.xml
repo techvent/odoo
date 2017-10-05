@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="report_ss_activity"
+            string="Activity"
+            model="gfi.activity" 
+            report_type="qweb-pdf"
+            file="gfi_secondary_sales.report_ssactivity" 
+            name="gfi_secondary_sales.report_ssactivity" 
+        />
+    </data>
+</openerp>

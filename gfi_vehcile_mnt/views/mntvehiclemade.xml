@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="gfi_mntvendo_form_view">
+            <field name="name">gfi.mntvehiclemade.form</field>
+            <field name="model">gfi.mntvehiclemade</field>
+            <field name="arch" type="xml">
+			<form string="Vendor">
+                    <sheet>
+                    
+                    <h1><field name="name" label="Vehicle Made"/></h1>
+                    <group colspan="4" col="4">
+			                    <field name="name" />
+                                <!-- <field name="active" widget="radio"/> -->							
+					</group>
+						
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!-- Tree View -->							
+		<record id="city_tree_view" model="ir.ui.view">
+			<field name="name">Tree View</field>
+			<field name="model">gfi.mntvehiclemade</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+<!-- Actions -->
+    <record model='ir.actions.act_window' id='gfi_mntvehiclemade_action'>
+        <field name='name'>Vehicle Made</field>
+        <field name='res_model'>gfi.mntvehiclemade</field>
+        <field name='view_type'>form</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+    			
+<!-- Add menu entry -->
+
+        <menuitem name="Vehicle Made" id="mntvehiclemade_menu" parent="vehiclemnt_config" action="gfi_mntvehiclemade_action" sequence="1"/>
+        	
+    </data>
+</openerp>
