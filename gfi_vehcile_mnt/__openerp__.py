@@ -61,7 +61,6 @@
     'sequence': 2,
     'price':50,
     'currency':'USD',
-    'contributors': '<Module Contributors>',
     'maintainer': '<Module Maintainer>',
     
 }
