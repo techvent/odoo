@@ -59,8 +59,8 @@
     'category': 'Employees',
     'summary' : '<Module Summary>',
     'sequence': 2,
-    'price':50,
-    'currency':'USD',
+    'price':45,
+    'currency':'EUR',
     'maintainer': '<Module Maintainer>',
     
 }
